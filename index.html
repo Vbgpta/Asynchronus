@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper"></div>
+
+    <script>
+        fetch("https://dummyjson.com/products")
+        .then((response) => {return result.json()})
+        .then(result => {
+        
+            console.log(result.products)
+           
+
+        //    products.map(function(product) {
+            // let img = document.createElement('img');
+            // let brand = document.createElement('brand');
+            // let discription = document.createElement('discription');
+
+            // brand.innerHTML = `${products.brand}`
+
+            
+            
+            
+            products.map(function(product) {
+                let img = document.createElement('img');
+                let brand = document.createElement('brand');
+                let discription = document.createElement('discription');
+                
+                brand.innerHTML = `${products.brand}`
+                
+            });
+          })
+
+
+        // function showData(result){
+        //     const products = []
+        //     for(i=0;i<products.length;i++){
+        //       console.log(products[i]);
+        //     }
+        // }
+
+    </script>
+</body>
+</html>
