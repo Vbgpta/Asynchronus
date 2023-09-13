@@ -9,32 +9,52 @@
     <div id="wrapper"></div>
 
     <script>
+        let div = document.getElementById('wrapper');
         fetch("https://dummyjson.com/products")
-        .then((response) => {return result.json()})
+        .then((response) => {return response.json()})
         .then(result => {
         
             console.log(result.products)
+            const res = result.products
+
+
+           res.forEach(function(product) {
+            let img = document.createElement('img');
+            let brand = document.createElement('brand');
+            let discription = document.createElement('discription');
+
+            brand.innerHTML = `${result.products}` 
+
+            let pro = document.createElement("img");
+            pro.src = product.images[0]
+            document.querySelector("#wrapper").append(pro)
+            // console.log(product.images[0])
+
+            let vai = document.createElement("p");
+             vai.innerHTML =  product.title
+            document.querySelector("#wrapper").append(vai)
+
+            let v = document.createElement("p");
+            v.innerHTML = product.description
+            document.querySelector("#wrapper").append(v)
+            
+
+            
+
            
-
-        //    products.map(function(product) {
-            // let img = document.createElement('img');
-            // let brand = document.createElement('brand');
-            // let discription = document.createElement('discription');
-
-            // brand.innerHTML = `${products.brand}`
-
+           
             
-            
-            
-            products.map(function(product) {
-                let img = document.createElement('img');
-                let brand = document.createElement('brand');
-                let discription = document.createElement('discription');
+        //     products.map(function(product) {
+        //         let img = document.createElement('img');
+        //         let brand = document.createElement('brand');
+        //         let discription = document.createElement('discription');
                 
-                brand.innerHTML = `${products.brand}`
+                // brand.innerHTML = `${result.products}`
                 
             });
           })
+
+         
 
 
         // function showData(result){
